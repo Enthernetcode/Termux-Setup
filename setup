@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo '''
+####### ####### ####### ####   ####  ##    ##   ##      ##
+   #    #       #     # ##### #####  ##    ##    ##    ##
+   #    ####### ####### ### ### ###  ##    ##     ##  ##
+   #    #       #     # ###  #  ###  ##    ##       ##
+   #    ####### #      ####     ###  ########      ## ##
+   #    ####### #       ###     ###*  ########    ##    ##
+'''
+apt update
+
+apt upgrade
+
+apt install nano
+
+apt install cmatrix
+
+git clone https://github.com/Enthernetcode/Termux-Styling-Tool
+
+cd Termux-Styling-Tool
+
+bash setup
+
+cmatrix -s 
