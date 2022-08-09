@@ -4,7 +4,7 @@ Setup up your termux and live ur Terminal dreams👍👍
 ### To setup
 >###### Type in the following commands 
 >>`apt install git`
->>>`git clone `
+>>>``git clone https://github.com/Enthernetcode/Termux-Setup``
 >>>>`cd Termux-Setup`
 >>>>>`bash setup`
 
