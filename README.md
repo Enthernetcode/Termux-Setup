@@ -5,8 +5,7 @@
 >>```
 apt install git
 ```
->>>```
-git clone 
+>>>##### Next
+```git clone 
 cd Termux-Setup
-bash setup
-```
+bash setup```
