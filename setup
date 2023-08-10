@@ -1,25 +1,38 @@
 #!/bin/bash
 
 echo '''
-####### ####### ####### ####   ####  ##    ##   ##      ##
-   #    #       #     # ##### #####  ##    ##    ##    ##
-   #    ####### ####### ### ### ###  ##    ##     ##  ##
-   #    #       #     # ###  #  ###  ##    ##       ##
-   #    ####### #      ####     ###  ########      ## ##
-   #    ####### #       ###     ###*  ########    ##    ##
+####### ####### ####### ####   ####  ##    ####    ##
+   #    #       ##   ## ##### #####  ##    ## ##  ##
+   #    ####### ######  ### ### ###  ##    ##  ####
+   #    #       ######  ###  #  ###  ##    ##   ##
+   #    ####### ##  ### ###     ###  ##    ##  ####
+   #    ####### ##   ######     ###* ######## ##  ##
 '''
-apt update
-
-apt upgrade
-
-apt install nano
-
-apt install cmatrix
-
-git clone https://github.com/Enthernetcode/Termux-Styling-Tool
-
-cd Termux-Styling-Tool
-
-bash setup
-
-cmatrix -s 
+update() {
+ apt update -y
+ apt upgrade -y
+}
+package_installation(){
+ for i in nano cmatrix figlet
+ do
+     if command -v $i; then
+        echo "* $i package exist!"
+        echo "* Running script!"
+     else
+        echo "[-] $i package doest not exist!"
+        echo "[+] installing $i package!"
+        apt install $i >/dev/null >2&1
+     fi
+ done
+}
+installing_styler() {
+  comand="git clone https://github.com/Enthernetcode/Termux-Styling-Tool"
+  echo "[+] installin Termux styler.... Please be patient"
+  eval $comand
+  cd Termux-Styling-Tool
+  bash setup
+  cmatrix -s
+}
+update
+package_installation
+installing_styler

@@ -1,7 +1,0 @@
-#!/bin/bash
-
-git pull
-git add .
-git commit -m 1st
-git push -u origin master
-
